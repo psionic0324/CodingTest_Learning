@@ -1,0 +1,41 @@
+[시간, 공간복잡도]
+컴퓨터는 1초에 대략 3~5억개의 연산을 처리함
+
+시간복잡도 : 입력의 크기와 문제를 해결하는데 걸리는 시간의 상관관계
+빅오표기법 : 주어진 식을 값이 가장 큰 대표항만 남겨서 나타내는 방법
+  ex) 5N + 3 -> O(N)
+O(1) < O(logN) < O(N) < O(NlogN) < O(N^2) < O(2^N) < O(N!)
+N <= 11 -> O(N!)
+N <= 25 -> O(2^N)
+N <= 5,000 -> O(N^2)
+N <= 1,000,000 -> O(NlogN)
+N <= 10,000,000 -> O(N)
+그 이상 -> O(logN), O(1)
+
+공간복잡도 : 입력의 크기와 문제를 해결하는데 필요한 메모리의 상관관계
+(공간 복잡도는 크게 중요하지 않음, 512MB = 1.2억개의 int)
+
+[자료형] (Java 기준)
+char : 2byte
+int : 4byte
+long : 8byte
+float : 4byte
+double : 8byte
+(실수 자료형의 경우 오차가 발생할 수 있으므로 주의)
+
+[표준 입출력]
+'''
+Scanner sc = new Scanner(System.in);
+int a = sc.nextInt();
+String b = sc.next();
+sc.close(); (close()를 해주지 않으면 자원이 누수될 수 있음)
+'''
+그런데 Scanner는 느리기 때문에 BufferedReader를 사용하는 것이 좋음
+'''
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+int a = Integer.parseInt(br.readLine());
+String b = br.readLine();
+''' (BufferedReader는 scanner와 달리 예외처리를 해주어야 함)
+System.in은 키보드로부터 입력을 받는 표준 입력 스트림
+inputStreamReader는 바이트 스트림을 문자 스트림으로 변환하는 보조 스트림
+
